@@ -3,23 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStore, applyMiddleware, compose , combineReducers} from 'redux'
+// import { createStore, applyMiddleware, compose , combineReducers} from 'redux'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
-import usersReducer from './reducers/users'
+// import usersReducer from './reducers/users'
+import store from './store.js'
 // import store from './store.js'
 // import { BrowserRouter } from 'react-router-dom'
 
 // const store = createStore(
   // reducer, )
 // const users = () => []
-const reducer = combineReducers({users: usersReducer
-})
+// const reducer = combineReducers({users: usersReducer
+// })
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-//! redux store
-let store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
+// //! redux store
+// let store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
 
 
 
