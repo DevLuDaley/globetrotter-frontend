@@ -1,5 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import logo from './logo.svg';
+import Login from "./components/Login"
 import './App.css';
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
     return (
     <Fragment className="App">
       Hello I'm react
+      <Login/>
     </Fragment>
   );}
 }
