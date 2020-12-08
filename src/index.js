@@ -6,13 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import { createStore, applyMiddleware, compose , combineReducers} from 'redux'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
+import usersReducer from './reducers/users'
 // import store from './store.js'
 // import { BrowserRouter } from 'react-router-dom'
 
 // const store = createStore(
   // reducer, )
 // const users = () => []
-const reducer = combineReducers({users
+const reducer = combineReducers({users: usersReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
