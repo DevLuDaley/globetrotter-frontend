@@ -5,14 +5,14 @@ import { updateLoginForm } from '../actions/loginForm'
 import { login } from '../actions/currentUser.js'
 // const Login = (props) => {
 
-const Login = ({username, password, updateLoginForm}) => {
+const Login = ({loginFormData, updateLoginForm, login}) => {
     const handleInputChange = event => {
         const { name, value } = event.target
         const updateFormInfo = {
-            ...loginForm,
+            ...loginFormData,
             [name]: value
         }
-        updateLoginForm(u)
+        updateLoginForm(updateFormInfo)
     }
 // const Login = ({props}) => {
 
@@ -20,22 +20,22 @@ const Login = ({username, password, updateLoginForm}) => {
     
 // }
 
-    var handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
     } 
     
     return (
     <form onSubmit={handleSubmit}>
-        <input placeholder="username" value={loginForm.username} onChange={handleInputChange} type="text" name="username"/>
-        <input placeholder="password" value={loginForm.password} onChange={handleInputChange} type="text" name="password"/>
+        <input placeholder="username" value={loginFormData.username} onChange={handleInputChange} type="text" name="username"/>
+        <input placeholder="password" value={loginFormData.password} onChange={handleInputChange} type="text" name="password"/>
         <input type="submit" value="Log In"/>
     </form>  );
 }
 //! connect this component to the store. Ask for parts of the state from the store and add them to props
 const mapStateToProps = (state) => {
     return{
-        username: state.loginForm.username,
-        password: state.loginForm.password
+        username: state.loginFormData.username,
+        password: state.loginFormData.password
     }
 }
 // const mapDispatchToProps = (dispatch) => {
