@@ -1,15 +1,24 @@
 import React from 'react'
 import { connect } from 'react-redux'
 // import { updateLoginForm } from "../actions/loginForm.js"
-import { login } from "../actions/currentUser.js"
+import { updateLoginForm } from '../actions/loginForm'
+import { login } from '../actions/currentUser.js'
 // const Login = (props) => {
 
-const Login = ({username, password}) => {
+const Login = ({username, password, updateLoginForm}) => {
+    const handleInputChange = event => {
+        const { name, value } = event.target
+        const updateFormInfo = {
+            ...loginForm,
+            [name]: value
+        }
+        updateLoginForm(u)
+    }
 // const Login = ({props}) => {
 
-    var handleChange = (e) => {
+    // var handleChange = (e) => {
     
-}
+// }
 
     var handleSubmit = (e) => {
         e.preventDefault();
@@ -17,8 +26,8 @@ const Login = ({username, password}) => {
     
     return (
     <form onSubmit={handleSubmit}>
-        <input value={username} onChange={handleChange} type="text" name="username"/>
-        <input value={password} onChange={handleChange} type="text" name="password"/>
+        <input placeholder="username" value={loginForm.username} onChange={handleInputChange} type="text" name="username"/>
+        <input placeholder="password" value={loginForm.password} onChange={handleInputChange} type="text" name="password"/>
         <input type="submit" value="Log In"/>
     </form>  );
 }
@@ -29,10 +38,10 @@ const mapStateToProps = (state) => {
         password: state.loginForm.password
     }
 }
-const mapDispatchToProps = (dispatch) => {
+// const mapDispatchToProps = (dispatch) => {
     
-}
+// }
  
 
 // export default connect(null (Login))
-export default connect(mapStateToProps,)(Login)
+export default connect(mapStateToProps, { updateLoginForm } )(Login)
