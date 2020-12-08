@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import { login } from "../actions/currentUser.js"
 // const Login = (props) => {
 
-// const Login = ({username, password}) => {
-const Login = ({props}) => {
+const Login = ({username, password}) => {
+// const Login = ({props}) => {
 
     var handleChange = (e) => {
     
@@ -17,8 +17,8 @@ const Login = ({props}) => {
     
     return (
     <form onSubmit={handleSubmit}>
-        <input value={props.username} onChange={handleChange} type="text" name="username"/>
-        <input value={props.password} onChange={handleChange} type="text" name="password"/>
+        <input value={username} onChange={handleChange} type="text" name="username"/>
+        <input value={password} onChange={handleChange} type="text" name="password"/>
         <input type="submit" value="Log In"/>
     </form>  );
 }
@@ -34,4 +34,5 @@ const mapDispatchToProps = (dispatch) => {
 }
  
 
-export default connect(mapStateToProps (Login))
+// export default connect(null (Login))
+export default connect(mapStateToProps,)(Login)
