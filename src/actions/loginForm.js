@@ -1,10 +1,12 @@
-export const updateLoginForm = (formaData) => {
-console.log('🚀 ~ file: loginForm.js ~ line 2 ~ updateLoginForm ~ formaData', formaData);
-    return {
+export const updateLoginForm = (formData) => {
+  return {
     type: "UPDATE_LOGIN_FORM",
-    payload: formaData
+    formData
+  }
 }
-    
+
+export const resetLoginForm = () => {
+  return {
+    type: "RESET_LOGIN_FORM"
+  }
 }
- 
-// export default updateLoginForm;
